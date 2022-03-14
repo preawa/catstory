@@ -23,8 +23,7 @@
                         <div class="body">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" id="title" class="form-control" name="title">
-                                        <label class="form-label">Post Title</label>
+                                        <textarea type ="link" id="tinymce" class="form-control" name="title" placeholder="Post Title"></textarea>
                                     </div>
                                 </div>
 
@@ -52,7 +51,7 @@
                             <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('categories') ? 'focused error' : '' }}">
                                     <label for="category">Select Category</label>
-                                    <select name="categories[]" id="category" class="form-control show-tick" data-live-search="true" multiple>
+                                    <select name="categories[]" id="category" class="form-control show-tick" data-live="true" multiple>
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
@@ -63,7 +62,7 @@
                             <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('tags') ? 'focused error' : '' }}">
                                     <label for="tag">Select Tags</label>
-                                    <select name="tags[]" id="tag" class="form-control show-tick" data-live-search="true" multiple>
+                                    <select name="tags[]" id="tag" class="form-control show-tick" data-live="true" multiple>
                                         @foreach($tags as $tag)
                                             <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                         @endforeach
@@ -74,20 +73,6 @@
                             <a  class="btn btn-danger m-t-15 waves-effect" href="{{ route('admin.category.index') }}">BACK</a>
                             <button type="submit" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                               BODY
-                            </h2>
-                        </div>
-                        <div class="body">
-                            <textarea id="tinymce" name="body"></textarea>
                         </div>
                     </div>
                 </div>

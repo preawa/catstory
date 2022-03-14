@@ -33,7 +33,7 @@
                         <i class="material-icons">favorite</i>
                     </div>
                     <div class="content">
-                        <div class="text">TOTAL FAVORITE</div>
+                        <div class="text">TOTAL LIKES</div>
                         <div class="number count-to" data-from="0" data-to="{{ Auth::user()->favorite_posts()->count() }}"
                             data-speed="1000" data-fresh-interval="20">
                         </div>
@@ -96,7 +96,7 @@
                         <i class="material-icons">account_circle</i>
                     </div>
                     <div class="content">
-                        <div class="text">TOTAL AUTHOR</div>
+                        <div class="text">TOTAL USERS</div>
                         <div class="number count-to" data-from="0" data-to="{{ $author_count }}" data-speed="15"
                             data-fresh-interval="20"></div>
                     </div>
@@ -106,7 +106,7 @@
                         <i class="material-icons">fiber_new</i>
                     </div>
                     <div class="content">
-                        <div class="text">TODAY AUTHOR</div>
+                        <div class="text">TODAY USERS</div>
                         <div class="number count-to" data-from="0" data-to="{{ $new_authors_today }}" data-speed="15"
                             data-fresh-interval="20"></div>
                     </div>
@@ -168,7 +168,7 @@
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="card">
                     <div class="header">
-                        <h2>TOP 10 ACTIVE AUTHOR</h2>
+                        <h2>TOP 10 ACTIVE USERS</h2>
                     </div>
                     <div class="body">
                         <div class="table-responsive">
@@ -213,17 +213,6 @@
 
     <!-- ChartJs -->
     <script src="{{ asset('assets/backend/plugins/chartjs/Chart.bundle.js') }}"></script>
-
-    <!-- Flot Charts Plugin Js -->
-    <script src="assets/backend/plugins/flot-charts/jquery.flot.js"></script>
-    <script src="assets/backend/plugins/flot-charts/jquery.flot.resize.js"></script>
-    <script src="assets/backend/plugins/flot-charts/jquery.flot.pie.js"></script>
-    <script src="assets/backend/plugins/flot-charts/jquery.flot.categories.js"></script>
-    <script src="assets/backend/plugins/flot-charts/jquery.flot.time.js"></script>
-
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="assets/backend/plugins/jquery-sparkline/jquery.sparkline.js"></script>
-
 
     <script src="{{ asset('assets/backend/js/pages/index.js') }}"></script>
 @endpush

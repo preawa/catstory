@@ -37,7 +37,7 @@
                                     <th>Is Approved</th>
                                     <th>Status</th>
                                     <th>Created At</th>
-                                    {{--<th>Updated At</th>--}}
+                                  
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -50,7 +50,7 @@
                                     <th>Is Approved</th>
                                     <th>Status</th>
                                     <th>Created At</th>
-                                    {{--<th>Updated At</th>--}}
+                                    
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
@@ -76,7 +76,7 @@
                                                 @endif
                                             </td>
                                             <td>{{ $post->created_at }}</td>
-                                            {{--<td>{{ $post->updated_at }}</td>--}}
+                                           
                                             <td class="text-center">
                                                 <a href="{{ route('author.post.show',$post->id) }}" class="btn btn-success waves-effect">
                                                     <i class="material-icons">visibility</i>

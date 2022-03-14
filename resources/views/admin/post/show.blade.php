@@ -33,12 +33,14 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                              {{ $post->title }}
+                                <div class="para">
+                                    {!! html_entity_decode($post->title) !!}
+                                </div>
                                 <small>Posted By <strong> <a href="">{{ $post->user->name }}</a></strong> on {{ $post->created_at->toFormattedDateString() }}</small>
                             </h2>
                         </div>
                         <div class="body">
-                            {!! $post->body !!}
+                            <img class="img-responsive thumbnail" src="{{asset('storage/post')}}/{{ $post->image }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -67,16 +69,16 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="header bg-amber">
                             <h2>
                                 Featured Image
                             </h2>
                         </div>
                         <div class="body">
-                            <img class="img-responsive thumbnail" src="{{ Storage::disk('public')->url('post/'.$post->image) }}" alt="">
+                            <img class="img-responsive thumbnail" src="{{asset('storage/post')}}/{{ $post->image }}" alt="">
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

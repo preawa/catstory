@@ -76,7 +76,7 @@
                                                 @endif
                                             </td>
                                             <td>{{ $post->created_at }}</td>
-                                            {{--<td>{{ $post->updated_at }}</td>--}}
+                                            
                                             <td class="text-center">
                                                 <a href="{{ route('admin.post.show',$post->id) }}" class="btn btn-success waves-effect">
                                                     <i class="material-icons">visibility</i>

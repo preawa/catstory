@@ -11,6 +11,7 @@ use App\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
@@ -24,10 +25,17 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function contact()
+    // {
+    //     $texts = 'Hello';
+
+    //     return view('contact', compact('texts'));
+    // }
     public function index()
     {
+
         $posts = Auth::User()->posts()->latest()->get();
-        return view('author.post.index', compact('posts'));
+        return view('author.dashboard', compact('posts'));
     }
 
     /**
@@ -37,9 +45,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $tags = Tag::all();
-        return view('author.post.create', compact('categories', 'tags'));
+
+        return view('author.post.dashboard');
     }
 
     /**
@@ -53,9 +60,6 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'image' => 'required',
-            'categories' => 'required',
-            'tags' => 'required',
-            'body' => 'required',
         ]);
         $image = $request->file('image');
         $slug = str_slug($request->title);
@@ -78,7 +82,6 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $slug;
         $post->image = $imageName;
-        $post->body = $request->body;
         if (isset($request->status)) {
             $post->status = true;
         } else {
@@ -87,13 +90,11 @@ class PostController extends Controller
         $post->is_approved = false;
         $post->save();
 
-        $post->categories()->attach($request->categories);
-        $post->tags()->attach($request->tags);
 
         $users = User::where('role_id', '1')->get();
         Notification::send($users, new NewAuthorPost($post));
         Toastr::success('Post Successfully Saved :)', 'Success');
-        return redirect()->route('author.post.index');
+        return redirect()->route('author.dashboard');
     }
 
     /**
@@ -123,9 +124,7 @@ class PostController extends Controller
             Toastr::error('You are not authorized to access this post', 'Error');
             return redirect()->back();
         }
-        $categories = Category::all();
-        $tags = Tag::all();
-        return view('author.post.edit', compact('post', 'categories', 'tags'));
+        return view('author.post.edit', compact('post'));
     }
 
     /**
@@ -144,9 +143,6 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'image' => 'image',
-            'categories' => 'required',
-            'tags' => 'required',
-            'body' => 'required',
         ]);
         $image = $request->file('image');
         $slug = str_slug($request->title);
@@ -167,12 +163,12 @@ class PostController extends Controller
         } else {
             $imageName = $post->image;
         }
-
+        Post::where('id', $post)->update(Response::all());
         $post->user_id = Auth::id();
         $post->title = $request->title;
         $post->slug = $slug;
         $post->image = $imageName;
-        $post->body = $request->body;
+        $post->img = $imageName;
         if (isset($request->status)) {
             $post->status = true;
         } else {
@@ -181,11 +177,9 @@ class PostController extends Controller
         $post->is_approved = false;
         $post->save();
 
-        $post->categories()->sync($request->categories);
-        $post->tags()->sync($request->tags);
 
         Toastr::success('Post Successfully Updated :)', 'Success');
-        return redirect()->route('author.post.index');
+        return redirect()->route('author.dashboard');
     }
 
     /**
@@ -203,8 +197,7 @@ class PostController extends Controller
         if (Storage::disk('public')->exists('post/' . $post->image)) {
             Storage::disk('public')->delete('post/' . $post->image);
         }
-        $post->categories()->detach();
-        $post->tags()->detach();
+
         $post->delete();
         Toastr::success('Post Successfully Deleted :)', 'Success');
         return redirect()->back();

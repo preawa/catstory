@@ -9,7 +9,7 @@
     <link href="{{ asset('assets/frontend/css/single-post/responsive.css') }}" rel="stylesheet">
     <style>
         .header-bg{
-            height: 400px;
+            height: 200px;
             width: 100%;
             background-image: url({{ Storage::disk('public')->url('post/'.$post->image) }});
             background-size: cover;
@@ -23,8 +23,10 @@
 
 @section('content')
 
-    <div class="header-bg">
-    </div><!-- slider -->
+    {{-- <div class="header-bg">
+        <div class="blog-image"><img src="{{asset('storage/post')}}/{{ $post->image }}" alt="{{$post->title}}"></div>
+    </div><!-- slider -->  --}}
+    
 
     <section class="post-area section">
         <div class="container">
@@ -41,21 +43,20 @@
 
                                 <div class="left-area">
                                     <a class="avatar" href="#"><img
-                                            src="{{ Storage::disk('public')->url('profile/' . $post->user->image) }}"
+                                            src="{{asset('storage/profile')}}/{{ $post->user->image }}"
                                             alt="Profile Image"></a>
                                 </div>
-
                                 <div class="middle-area">
-                                    <a class="name" href="#"><b>{{ $post->user->name }}</b></a>
+                                    <a class="name" href="{{ route('author.profile',$post->user->username) }}"><b>{{ $post->user->name }}</b></a>
                                     <h6 class="date">on {{ $post->created_at->diffForHumans() }}</h6>
                                 </div>
 
                             </div><!-- post-info -->
 
                             <h3 class="title"><a href="#"><b>{{ $post->title }}</b></a></h3>
-
+                            <div class="blog-image"><img src="{{asset('storage/post')}}/{{ $post->image }}" alt="{{$post->title}}"></div>
                             <div class="para">
-                                {!! html_entity_decode($post->body) !!}
+                                {{-- {!! html_entity_decode($post->body) !!} --}}
                             </div>
 
                             <ul class="tags">
@@ -142,11 +143,11 @@
                             <div class="single-post post-style-1">
 
                                 <div class="blog-image"><img
-                                        src="{{ Storage::disk('public')->url('post/' . $randompost->image) }}"
-                                        alt="{{ $randompost->title }}"></div>
+                                        
+                                        src="{{asset('storage/post')}}/{{ $randompost->image }}" alt="{{$randompost->title}}"></div>
 
                                 <a class="avatar" href="#"><img
-                                        src="{{ Storage::disk('public')->url('profile/' . $randompost->user->image) }}"
+                                        src="{{asset('storage/profile')}}/{{ $randompost->user->image }}"
                                         alt="Profile Image"></a>
 
                                 <div class="blog-info">
@@ -233,7 +234,7 @@
 
                                         <div class="left-area">
                                             <a class="avatar" href="#"><img
-                                                    src="{{ Storage::disk('public')->url('profile/' . $comment->user->image) }}"
+                                                    src="{{asset('storage/profile')}}/{{ $comment->user->image }}"
                                                     alt="Profile Image"></a>
                                         </div>
 
@@ -242,9 +243,9 @@
                                             <h6 class="date">on {{ $comment->created_at->diffForHumans() }}</h6>
                                         </div>
 
-                                        <div class="right-area">
+                                        {{-- <div class="right-area">
                                             <h5 class="reply-btn"><a href="#"><b>REPLY</b></a></h5>
-                                        </div>
+                                        </div> --}}
 
                                     </div><!-- post-info -->
 

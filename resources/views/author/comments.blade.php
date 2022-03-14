@@ -44,14 +44,14 @@
                                                 <div class="media">
                                                     <div class="media-left">
                                                         <a href="#">
-                                                            <img class="media-object" src="{{ Storage::disk('public')->url('profile/'.$comment->user->image) }}" width="64" height="64">
+                                                            <img class="media-object" src="{{asset('storage/profile')}}/{{ $post->user->image }}" width="64" height="64">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">
                                                         <h4 class="media-heading">{{ $comment->user->name }} <small>{{ $comment->created_at->diffForHumans() }}</small>
                                                         </h4>
                                                         <p>{{ $comment->comment }}</p>
-                                                        <a target="_blank" href="{{ route('post.details',$comment->post->slug.'#comments') }}">Reply</a>
+                                                        <a target="_blank" href="{{ route('post.details',$comment->post->slug.'#comments') }}"></a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -59,7 +59,7 @@
                                                 <div class="media">
                                                     <div class="media-right">
                                                         <a target="_blank" href="{{ route('post.details',$comment->post->slug) }}">
-                                                            <img class="media-object" src="{{ Storage::disk('public')->url('post/'.$comment->post->image) }}" width="64" height="64">
+                                                            <img class="media-object" src="{{asset('storage/post')}}/{{ $comment->post->image }}" width="64" height="64">
                                                         </a>
                                                     </div>
                                                     <div class="media-body">

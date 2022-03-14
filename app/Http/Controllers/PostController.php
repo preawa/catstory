@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Map;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -12,7 +13,6 @@ class PostController extends Controller
 {
     public function index()
     {
-        // $posts = Post::latest()->approved()->published()->paginate(6);
         $posts = Post::latest()->approved()->published()->paginate(6);
         return view('posts', compact('posts'));
     }

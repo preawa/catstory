@@ -91,8 +91,8 @@
     <!-- Bootstrap Core Js -->
     <script src="{{ asset('assets/backend/plugins/bootstrap/js/bootstrap.js') }}"></script>
 
-    <!-- Select Plugin Js -->
-    {{-- <script src="{{ asset('assets/backend/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script> --}}
+ <!-- Select Plugin Js -->
+    <script src="{{ asset('assets/backend/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
 
     <!-- Slimscroll Plugin Js -->
     <script src="{{ asset('assets/backend/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
@@ -104,6 +104,10 @@
     <!-- Custom Js -->
     <script src="{{ asset('assets/backend/js/admin.js') }}"></script>
     
+    <!-- Morris Plugin Js -->
+    <script src="{{ asset('assets/backend/plugins/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/morrisjs/morris.js') }}"></script>
+
 
     <!-- Demo Js -->
     <script src="{{ asset('assets/backend/js/demo.js') }}"></script>

@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+
 
 class User extends Authenticatable
 {
@@ -35,6 +38,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Post');
     }
+    public function cats()
+    {
+        return $this->hasMany('App\Cat');
+    }
 
     public function favorite_posts()
     {
@@ -49,5 +56,9 @@ class User extends Authenticatable
     public function scopeAuthors($query)
     {
         return $query->where('role_id', 2);
+    }
+    public function scopeApproved($query)
+    {
+        return $query->where('is_approved', 1);
     }
 }

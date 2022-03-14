@@ -37,8 +37,8 @@ h6{ font-size: .9em; letter-spacing: 1px; }
 
 a, button{ display: inline-block; text-decoration: none; color: inherit; transition: all .3s; }
 
-a:focus, a:active, a:hover,
-button:focus, button:active, button:hover{ text-decoration: none; color: #498BF9; }
+/* a:focus, a:active, a:hover,
+button:focus, button:active, button:hover{ text-decoration: none; color: #498BF9; } */
 
 b{ font-weight: 500; }
 
@@ -93,8 +93,8 @@ header{ font-weight: 400; }
 3. MENU
 --------------------------------- */
 
-header{ overflow: hidden; background: #fff; box-shadow: 0px 2px 10px rgba(0,0,0, .3); }
-
+header{ overflow: hidden; background: #fff; box-shadow: inset 0px -1px 0px #f3f3f4;}
+/* box-shadow: 0px 2px 10px rgba(0,0,0, .3); */
 header .logo{ float: left; height: 20px; margin: 20px 30px; }
 
 header .logo img{ height: 100%; width: auto; }
@@ -104,11 +104,12 @@ header .main-menu{ display: inline-block; float: left; }
 
 header .main-menu > li{ float: left; }
 
-header .main-menu > li > a{ height: 60px; line-height: 60px; padding: 0 25px; border-right: 1px solid #eee; }
+header .main-menu > li > a{ height: 60px; line-height: 60px; padding: 0 25px; font-weight:500}
+header .main-menu > li > a:hover{ color:#aa5758}
+/* border-right: 1px solid #eee;  */
+/* header .main-menu > li > a:hover{  background: #eee; }
 
-header .main-menu > li > a:hover{  background: #eee; }
-
-header .main-menu > li:first-child > a{ border-left: 1px solid #eee; }
+header .main-menu > li:first-child > a{ border-left: 1px solid #eee; } */
 
 
 header .visible.main-menu{ display: block; }

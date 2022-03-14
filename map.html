@@ -1,0 +1,136 @@
+<html>
+<style>
+    #map {
+        display: table;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9PYl-xqySFpYTTUkalB2GBL_9W53gJ0&libraries=places" async defer></script>
+    <script>
+        function initMap2(pv_values = 0) {
+            // map options
+            var options = {
+                zoom: 5,
+                streetViewControl: false,
+                center: thailand
+
+            }
+
+
+            // new maps
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+
+
+            <?php  foreach ($arr_cmap as $key):
+                if(empty($key['course_lat']) || empty($key['course_lng']) || empty($key['pv_id']) ){
+                    continue;
+                }
+
+         ?>
+            var latlng = {
+                lat: <?php echo $key['course_lat'] ?>,
+                lng: <?php echo $key['course_lng'] ?>
+            }
+
+            var contentString =
+                '<div id="content">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h3 id="firstHeading" class="firstHeading text-center"><?php echo $key['
+            obj_title_th '] ?></h3>' +
+                '<div id="bodyContent">' +
+                "<div style='float:right;'>" +
+                "<p style='padding-left:1rem;'><?php echo $key['course_address']; ?></p>" +
+                "<div class='text-right'><p style='padding-left:1rem;'><a target='_blank' class='btn btn-primary btn-sm' href='<?php echo base_url('courseDetail/'.$key['id'].'/'.$key['obj_slug']); ?>'>รายละเอียด</a></div></p>" +
+                "</div>" +
+                "<div style='float:left'>" +
+                "<img style='width:100px;' src='../../uploads/course/<?php echo $key['obj_feature_img'] ?>'>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+
+            arrMarkers.push({
+                coords: latlng,
+                content: contentString,
+
+            });
+
+            <?php endforeach ?>
+
+
+
+
+            // Loop through markers
+            for (var i = 0; i < arrMarkers.length; i++) {
+                if (pv_values && pv_values != arrMarkers[i]['pv_id']) {
+                    continue;
+                }
+                addMarker(arrMarkers[i]);
+            }
+            // add marker function
+
+            function addMarker(props) {
+
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                    icon: props.iconImage
+                });
+
+
+                // check for custom icon
+                if (props.iconImage) {
+                    // set icon
+                    marker.setIcon(props.iconImage);
+                }
+
+                // check content
+                if (props.content) {
+                    // set content
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    });
+
+
+                }
+                google.maps.event.addListener(marker, 'click', function() {
+
+                    if (!marker.open) {
+                        infoWindow.open(map, marker);
+                        map.setZoom(8);
+                        marker.open = true;
+                    } else {
+                        infoWindow.close();
+                        marker.open = false;
+                        map.setZoom(5);
+                        map.setCenter(thailand);
+                    }
+                    google.maps.event.addListener(map, 'click', function() {
+                        infoWindow.close();
+                        map.setZoom(5);
+                        map.setCenter(thailand);
+
+
+                    });
+
+                    google.maps.event.addListener(infoWindow, 'closeclick', function() {
+                        map.setZoom(5);
+                        map.setCenter(thailand);
+
+                    });
+                });
+
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

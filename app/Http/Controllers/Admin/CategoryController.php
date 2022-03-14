@@ -47,7 +47,7 @@ class CategoryController extends Controller
             'image' => 'required|mimes:jpeg,bmp,png,jpg'
         ]);
 
-        // // get form image
+        // get form image
         $image = $request->file('image');
         $slug = str_slug($request->name);
         if (isset($image)) {

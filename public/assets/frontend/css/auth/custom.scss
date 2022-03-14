@@ -1,0 +1,147 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+// a{
+//     color: black;
+//     &:hover{
+//         color: black;
+//     }
+// }
+.color1{
+    color:#d3c0ac
+}
+.color2{
+    color:#aa5758
+}
+.bg-color2{
+    background-color:#aa5758 !important;
+}
+.btn-first{
+    background-color:#aa5758 !important;
+    cursor: pointer;
+    color: #fff;
+    &:hover{
+        color: #fff;
+    }
+}
+.w-120{
+    width: 120px;
+}
+.login{
+    margin-top: 50px;
+    .login-form{
+        .form-control{
+            border: none;
+            border-bottom: 1px solid #d3c0ac !important;
+            border-radius: 0;
+        }
+    }
+    .a-signin{
+        margin-left: 10px;
+        font-weight: 500;
+        &:hover{
+            color: #aa5758;
+        }
+    }
+}
+.regis{
+    margin-top: 50px;
+    .regis-form{
+        .form-control{
+            margin-top: 0px;
+            border: none;
+            border-bottom: 1px solid #d3c0ac !important;
+            border-radius: 0;
+        }
+    }
+    .a-signin{
+        margin-left: 10px;
+        font-weight: 500;
+        &:hover{
+            color: #aa5758;
+        }
+    }
+}
+.dashboard-head{
+    background-color: #f7f2e9;
+}
+.tab-profile{
+    a{
+        display: flex;
+        i{
+            margin-right: 10px;
+        }
+        &:hover{
+            color: white;
+        }
+        &.active{
+            color: #d3c0ac !important;
+        }
+    }
+
+}
+.card-showcat{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.card-selectcat{
+    background-color: #fff;
+    padding: 28px;
+    border-radius: 10px;
+}
+.nab-settingprofile{
+    a{
+        border: none !important;
+        display: flex;
+        margin-top: 5px;
+        &.active{
+            border-bottom: 1px solid #aa5758 !important;
+        }
+    }
+}
+#showmap-cat{
+    .dataTables_paginate{
+        .previous,.current,.next{
+            cursor: pointer;
+            margin-left: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    position: relative;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+        }
+    }
+}
+.user-profile-content{
+    .card{
+        padding: 20px;
+        border-radius: 10px;
+        // border: 1px solid red;
+        background: #fff;
+    }
+    .card-usersetting{
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        form{
+            .form-control{
+                border: none;
+                border-bottom: 1px solid #aa5758;
+                border-radius: 0;
+            }
+        }
+    }
+}
+@media (min-width: 1200px) { 
+    .login{
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+.regis{
+    margin-bottom: 200px;
+}
+}

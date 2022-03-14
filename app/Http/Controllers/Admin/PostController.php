@@ -55,7 +55,8 @@ class PostController extends Controller
             'image' => 'required',
             'categories' => 'required',
             'tags' => 'required',
-            'body' => 'required',
+            // 'body' => 'required',
+
         ]);
         $image = $request->file('image');
         $slug = str_slug($request->title);
@@ -78,7 +79,6 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $slug;
         $post->image = $imageName;
-        $post->body = $request->body;
         if (isset($request->status)) {
             $post->status = true;
         } else {
@@ -133,7 +133,7 @@ class PostController extends Controller
             'image' => 'image',
             'categories' => 'required',
             'tags' => 'required',
-            'body' => 'required',
+            // 'body' => 'required',
         ]);
         $image = $request->file('image');
         $slug = str_slug($request->title);
@@ -159,7 +159,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = $slug;
         $post->image = $imageName;
-        $post->body = $request->body;
+        // $post->body = $request->body;
         if (isset($request->status)) {
             $post->status = true;
         } else {

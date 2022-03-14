@@ -147,6 +147,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
+        FarhanWazir\GoogleMaps\GMapsServiceProvider::class,
+        
+
 
         /*
          * Package Service Providers...
@@ -157,10 +160,11 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        //App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Pusher\Laravel\PusherServiceProvider::class,
+        Nahid\Talk\TalkServiceProvider::class,
     ],
 
     /*
@@ -192,6 +196,7 @@ return [
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
@@ -210,6 +215,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'Talk'  => Nahid\Talk\Facades\Talk::class,
+        'Pusher' => Pusher\Laravel\Facades\Pusher::class,
+        'Pusher' => Pusher\Pusher::class,
+        'LetterAvatar' => YoHang88\LetterAvatar\LetterAvatar::class,
+        'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
+        'HasStatuses' => Spatie\ModelStatus\HasStatuses::class,
     ],
 
 ];

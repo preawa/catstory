@@ -2,8 +2,9 @@
     <!-- User Info -->
     <div class="user-info">
         <div class="image">
-            {{-- <img src="{{ asset('assets/backend/images/user.png') }}" width="48" height="48" alt="User" /> --}}
-            <img src="{{ Storage::disk('public')->url('profile/'.Auth::user()->image) }}" width="48" height="48" alt="User" />
+            {{-- <img src="{{ asset('assets/backend/images/user.png') }}" width="48"
+                height="48" alt="User" /> --}}
+            <img src="{{ asset('storage/profile/' . Auth::user()->image) }}" width="48" height="48" alt="User" />
         </div>
         <div class="info-container">
             <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}
@@ -13,9 +14,11 @@
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="true">keyboard_arrow_down</i>
                 <ul class="dropdown-menu pull-right">
-                    
+
                     <li>
-                        <a href="{{ Auth::user()->role->id == 1 ? route('admin.settings') : route('author.settings')}}"><i class="material-icons">settings</i>Settings</a>
+                        <a
+                            href="{{ Auth::user()->role->id == 1 ? route('admin.settings') : route('author.settings') }}"><i
+                                class="material-icons">settings</i>Settings</a>
                     </li>
                     <li role="separator" class="divider"></li>
                     <li>
@@ -83,11 +86,30 @@
                 <li class="{{ Request::is('admin/authors') ? 'active' : '' }}">
                     <a href="{{ route('admin.author.index') }}">
                         <i class="material-icons">account_circle</i>
-                        <span>Authors</span>
+                        <span>Users</span>
                     </a>
                 </li>
+               
+                <li class="{{ Request::is('admin/map*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.map.index') }}">
+                        <i class="material-icons">add_location_alt</i>
+                        <span>Map</span>
+                    </a>
+                </li>
+                {{-- <li class="{{ Request::is('admin/catowner*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.catowner.index') }}">
+                        <i class="material-icons">add_location_alt</i>
+                        <span>Cat Owner</span>
+                    </a>
+                </li> --}}
+                {{-- <li class="{{ Request::is('admin/totelmap*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.totelmap.index') }}">
+                        <i class="material-icons">add_location_alt</i>
+                        <span>totel map</span>
+                    </a>
+                </li> --}}
                 <li class="header">SYSTEM</li>
-                
+
                 <li class="{{ Request::is('admin/settings') ? 'active' : '' }}">
                     <a href="{{ route('admin.settings') }}">
                         <i class="material-icons">settings</i>
@@ -106,7 +128,7 @@
                     </form>
                 </li>
             @endif
-            @if (Request::is('author*'))
+            {{-- @if (Request::is('author*'))
                 <li class="{{ Request::is('author/dashboard') ? 'active' : '' }}">
                     <a href="{{ route('author.dashboard') }}">
                         <i class="material-icons">dashboard</i>
@@ -131,6 +153,18 @@
                         <span>Comments</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('author/customers*') ? 'active' : '' }}">
+                    <a href="{{ route('author.customers.index') }}">
+                        <i class="material-icons">assignment</i>
+                        <span>Forms</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('author/map*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.map.index') }}">
+                        <i class="material-icons">add_location_alt</i>
+                        <span>Map</span>
+                    </a>
+                </li>
                 <li class="header">System</li>
 
                 <li class="{{ Request::is('author/settings') ? 'active' : '' }}">
@@ -150,7 +184,7 @@
                         @csrf
                     </form>
                 </li>
-            @endif
+            @endif --}}
 
         </ul>
     </div>
@@ -158,10 +192,7 @@
     <!-- Footer -->
     <div class="legal">
         <div class="copyright">
-            &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
-        </div>
-        <div class="version">
-            <b>Version: </b> 1.0.5
+            <a href="javascript:void(0);">{{ config('app.name') }} @ 2020.</a>
         </div>
     </div>
     <!-- #Footer -->
