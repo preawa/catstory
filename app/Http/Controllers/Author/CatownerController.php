@@ -179,9 +179,11 @@ class CatownerController extends Controller
             Toastr::error('You are not authorized to access this catowner', 'Error');
             return redirect()->back();
         }
-        
+
         $cat->delete();
         Toastr::success('Catowner Successfully Deleted :)', 'Success');
         return redirect()->back();
     }
+
+    
 }

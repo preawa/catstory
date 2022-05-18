@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 
-@section('title', 'Map')
+@section('title', 'ShowCat')
 
 @push('css')
     <link href="{{ asset('assets/frontend/css/profile/styles.css') }}" rel="stylesheet">
@@ -20,19 +20,19 @@
 
         html,
         /* body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            @media (min-width: 1000px) { 
-                footer {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 800;
-            }
-            } */
+                                    height: 100%;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                                @media (min-width: 1000px) {
+                                    footer {
+                                    position: fixed;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    z-index: 800;
+                                }
+                                } */
 
     </style>
 @endpush
@@ -92,56 +92,30 @@
                         @if (session('success'))
                             <h1>{{ session('success') }}</h1>
                         @endif
-                        <form method="POST" action="{{ route('author.catowner.populatecats') }}">
+                        <form method="POST" action="{{ route('author.catowner.delcat', $cats[0]['id']) }}">
+                            @csrf
                             <div class="col-12 col-sm-8">
                                 <div class="card card-selectcat mb-3">
                                     <div class="row center-block">
                                         <div class="col-xs-10 col-sm-10 col-md-10 ">
-                                            <select class="form-control" id="cat" name="name_owner" required focus>
+                                            <select class="form-control" id="selcat" name="selcat" required focus>
                                                 <option value="" disabled selected>--โปรดเลือกแมวซ้ำ--</option>
-                                                @foreach ($cats as $cat)
-                                                    <option value="
-                                               <table>
-                                                <tr>
-                                                    <td><strong>ชื่อแมว : </strong></td>
-                                                    <td>
-                                                       <h5>{{ $cat->name }}</h5> 
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>ลักษณะแมว : </strong></td>
-                                                    <td>
-                                                        <h5>{{ $cat->body }}</h5>
-                                                    </td>
-                                                </tr>
-                
-                                                <tr>
-                                                    <td><strong>Status : </strong></td>
-                                                    <td>
-                                                             @if ($cat->status)
-                                                        <strong>มีเจ้าของ</strong>
-                                                    @else
-                                                        <strong>ไม่มีเจ้าของ</strong>
-                                                @endif
-                                                </td>
-                                                </tr>
-
-                                                </table>
-                                                ">{{ $cat->name }}</option>
+                                                @foreach ($allcats as $allcat)
+                                                    <option value="{{ $allcat->id }}">{{ $allcat->name }}</option>
                                                 @endforeach
                                             </select>
                                             <br>
                                             <div>
                                                 <button type="submit" class="btn btn-first"
-                                                    onclick="deleteCatowner({{ $cat->id }})">
+                                                    onclick="deleteCatowner({{ $allcat->id }})">
                                                     <i class="material-icons">delete</i>
                                                 </button>
-                                                <form id="delete-form-{{ $cat->id }}"
-                                                    action="{{ route('author.catowner.destroy', $cat->id) }}"
+                                                {{-- <form id="delete-form-{{ $allcat->id }}"
+                                                    action="{{ route('author.catowner.destroy', $allcat->id) }}"
                                                     method="POST" style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
-                                                </form>
+                                                </form> --}}
                                             </div>
                                         </div>
                                         <label class="col-sm-8 col-form-label" id="displayOwner"></label>
@@ -162,7 +136,38 @@
 @endsection
 
 @push('js')
-
+    <script type="text/javascript">
+        function deleteCatowner(id) {
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                buttonsStyling: false,
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    event.preventDefault();
+                    document.getElementById('delete-form-' + id).submit();
+                } else if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.cancel
+                ) {
+                    swal(
+                        'Cancelled',
+                        'Your data is safe :)',
+                        'error'
+                    )
+                }
+            })
+        }
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9PYl-xqySFpYTTUkalB2GBL_9W53gJ0&libraries=places" async
         defer></script>
     <script>

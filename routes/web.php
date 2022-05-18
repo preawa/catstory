@@ -107,7 +107,7 @@ Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 
     // Route::get('catowner/show', 'CatController@show')->name('catowner.show');
     Route::get('catowner/duplicate', 'CatController@populatecats');
     Route::get('catowner/populatecats', 'CatController@populatecats')->name('catowner.populatecats');
-    Route::get('catowner/duplicate', 'CatController@duplicate')->name('catowner.duplicate');
+    // Route::get('catowner/duplicate', 'CatController@duplicate')->name('catowner.duplicate');
     Route::get('catowner/booking/{id}', 'CatController@booking')->name('catowner.booking');
 
     Route::get('/pending/catowner', 'CatownerController@pending')->name('catowner.pending');
@@ -115,6 +115,7 @@ Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 
     Route::get('/location/catowner', 'CatController@location')->name('catowner.location');
     Route::delete('/{id}/catowner', 'CatownerController@destroy')->name('catowner.destroy');
     Route::delete('dashboard/{id}', 'DashboardController@destroy')->name('dashboard.destroy');
+     Route::post('/catowner/{cat}', 'CatController@delete_duplicate')->name('catowner.delcat');
 
     Route::resource('adopt', 'AdoptController');
 

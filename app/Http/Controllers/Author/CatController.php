@@ -195,4 +195,14 @@ class CatController extends Controller
         Toastr::success('Cat Successfully Deleted :)', 'Success');
         return redirect()->back();
     }
+
+    public function delete_duplicate(Request $request)
+    {
+        $selid = $request->selcat;
+        Toastr::success('Cat Successfully Deleted :) ' . $selid, 'Success');
+        //print_r($selid);
+        $cat_del = Cat::find($selid);
+        $cat_del->delete();
+        return redirect()->back();
+    }
 }
