@@ -572,12 +572,12 @@
         <ul
             class="nav nav-tabs tabs-alt justify-content-center text-white tab-profile bg-color2 text-center d-block d-sm-flex">
             <li class="nav-item">
-                <a class="nav-link py-4" href="{{ route('author.dashboard') }}"><i class="material-icons">article</i>
+                <a class="nav-link py-4" href="#post" data-toggle="tab"><i class="material-icons">article</i>
                     Posts</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link py-4 active" href="{{ route('author.dashboard1') }}"><i
+                <a class="nav-link py-4 active" href="#owner" data-toggle="tab"><i
                         class="material-icons">person_pin</i>Cats
                     Owner</a>
             </li>
@@ -674,10 +674,10 @@
                                                                         class="btn btn-success waves-effect">
                                                                         <i class="material-icons">visibility</i>
                                                                     </a>
-                                                                    <button class="btn btn-success waves-effect"
+                                                                    {{-- <button class="btn btn-success waves-effect"
                                                                         type="button">
                                                                         <i class="material-icons">edit</i>
-                                                                    </button>
+                                                                    </button> --}}
                                                                     {{-- <div class="timeline-item-header">
                                                                         <div class="modal fade" id="exampleModalCenter3"
                                                                             tabindex="-1" role="dialog"

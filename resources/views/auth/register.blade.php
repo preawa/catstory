@@ -31,13 +31,13 @@
 
    
     @media (min-width: 1200px) { 
-        footer {
+        /* footer {
         position: fixed;
         right: 0;
         bottom: 0;
         left: 0;
         z-index: 1030;
-    }
+    } */
     }
 </style>
      <!-- <style>
