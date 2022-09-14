@@ -190,7 +190,7 @@ class CatownerController extends Controller
         $selid = $request->selcat;
         Toastr::success('Catowner Successfully Deleted :) ' . $selid, 'Success');
         //print_r($selid);
-        $cat_del = Cat::find($selid);
+        $cat_del = Catowner::find($selid);
         $cat_del->delete();
         return redirect()->back();
     }

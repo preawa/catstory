@@ -113,7 +113,7 @@ Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 
     Route::get('/pending/catowner', 'CatownerController@pending')->name('catowner.pending');
     Route::put('/catowner/{id}/approve', 'CatownerController@approval')->name('catowner.approve');
     Route::get('/location/catowner', 'CatController@location')->name('catowner.location');
-    Route::delete('/{id}/catowner', 'CatownerController@destroy')->name('catowner.destroy');
+    // Route::delete('/{id}/catowner', 'CatownerController@destroy')->name('catowner.destroy');
     Route::delete('dashboard/{id}', 'DashboardController@destroy')->name('dashboard.destroy');
     Route::post('/catowner/{cat}', 'CatController@delete_duplicate')->name('catowner.delcat');
 
