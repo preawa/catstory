@@ -1131,7 +1131,7 @@
                                                                     onclick="deleteCatowner({{ $cat->id }})">
                                                                     <i class="material-icons">delete</i>
                                                                 </button>
-                                                                <form id="delete-form-{{ $selcat }}"
+                                                                <form id="delete-form-{{ $cat->id }}"
                                                                     action="{{ route('author.catowner.delcat', $cat->id) }}"
                                                                     method="POST" style="display: none;">
                                                                     @csrf
