@@ -44,11 +44,11 @@
                             <div class="form-group">
                                 <label for="location"> Location/City/Address </label>
                                 <button type="button" class="btn btn-success waves-effect" onclick="getLocation()">
-                                    location now
+                                    ใช้ตำแหน่งปัจจุบัน
                                 </button>
 
                                 <a class="btn btn-primary waves-effect" href="{{ route('author.catowner.location') }}">
-                                    location value
+                                    กำหนดตำแหน่งเอง
                                 </a>
                             </div>
 
