@@ -1132,7 +1132,7 @@
                                                                     <i class="material-icons">delete</i>
                                                                 </button>
                                                                 <form id="delete-form-{{ $cat->id }}"
-                                                                    action="{{ route('author.catowner.destroy', $cat->id) }}"
+                                                                    action="{{ route('author.catowner.delcat', $cat->id) }}"
                                                                     method="POST" style="display: none;">
                                                                     @csrf
                                                                     @method('DELETE')

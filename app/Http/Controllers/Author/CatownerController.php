@@ -185,5 +185,14 @@ class CatownerController extends Controller
         return redirect()->back();
     }
 
+    public function delete_dash(Request $request)
+    {
+        $selid = $request->selcat;
+        Toastr::success('Catowner Successfully Deleted :) ' . $selid, 'Success');
+        //print_r($selid);
+        $cat_del = Cat::find($selid);
+        $cat_del->delete();
+        return redirect()->back();
+    }
     
 }
