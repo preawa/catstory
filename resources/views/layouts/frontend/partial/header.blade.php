@@ -53,7 +53,7 @@
 
         </ul><!-- main-menu -->
 
-<<<<<<< HEAD
+
 
         {{-- <div class="src-area">
 =======
