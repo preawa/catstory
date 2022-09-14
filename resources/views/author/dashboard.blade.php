@@ -577,7 +577,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link py-4" href="{{ route('author.dashboard1') }}"><i class="material-icons">person_pin</i>Cats
+                <a class="nav-link py-4" href="#catowner" data-toggle="tab"><i class="material-icons">person_pin</i>Cats
                     Owner</a>
             </li>
 
@@ -1064,16 +1064,16 @@
             <!-- End Tab user activities -->
 
             <!-- Tab user Maps -->
-            {{-- <div class="tab-pane animated fadeInRight" id="catowner">
+            <div class="tab-pane animated fadeInRight" id="catowner">
                 <div class="container">
                     <div class="user-profile-content">
                         <div class="block-header">
                             <a class="btn btn-first waves-effect d-flex w-120  mb-3"
                                 href="{{ route('author.catowner.create') }}">
                                 <i class="material-icons">person_pin</i>Add Cats</a>
-                        </div> --}}
+                        </div>
                         <!-- Exportable Table -->
-                        {{-- <div class="row clearfix">
+                         <div class="row clearfix">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center-block">
                                 <div class="card">
                                     <div class="header">
@@ -1147,12 +1147,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                         <!-- #END# Exportable Table -->
-                    {{-- </div>
+                    {{-- </div> --}}
                 </div>
             </div><!-- End div .scroll-user-widget -->
-        </div> --}}
+        </div>
         <!-- #END# Exportable Table -->
     </div>
     </div><!-- End div .scroll-user-widget -->
