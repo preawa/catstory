@@ -35,7 +35,7 @@
                 @endif
                 @if (Auth::user()->role->id == 2)
                 <li><a href="{{ route('author.dashboard') }}"><img src="{{ asset('assets/frontend/images/DASHLOGO.png') }}"  width="60" height="60" alt="" /></a></li>
-                <li><a href="{{ route('chat') }}"><img src="{{ asset('assets/frontend/images/CHAT.png') }}"  width="60" height="60" alt="" /></a></li>
+                {{-- <li><a href="{{ route('chat') }}"><img src="{{ asset('assets/frontend/images/CHAT.png') }}"  width="60" height="60" alt="" /></a></li> --}}
                 <li><a href="{{ route('map') }}"><img src="{{ asset('assets/frontend/images/MAP.png') }}"  width="60" height="60" alt="" /></a></li>
                 <li>
                         <a href="{{ route('logout') }}"

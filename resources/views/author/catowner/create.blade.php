@@ -20,7 +20,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 m-auto">
                     <div class="card shadow">
                         <div class="card-header bg-primary">
-                            <h5 class="card-title text-white"> Cats Owner</h5>
+                            <h5 class="card-title text-white"> กรอกประวัติแมว</h5>
                         </div>
 
 
@@ -53,7 +53,7 @@
                             </div>
 
                             <div class="form-group" id="lat_area">
-                                <label> Latitude Longitude </label>
+                                <label> พิกัด ลองติจูด/ละติจูด </label>
                                 <input type="text" name="latitude" id="lat" class="form-control" readonly required>
                                 <input type="text" name="longitude" id="long" class="form-control" readonly required>
                             </div>
@@ -77,7 +77,7 @@
 
                         <div class="card-footer">
                             <a href="{{ route('author.dashboard') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
-                            <button type="submit" class="btn btn-success"> Submit </button>
+                            <button type="submit" class="btn btn-success"> บันทึก</button>
                         </div>
                     </div>
                 </div>
