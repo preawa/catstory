@@ -1127,7 +1127,7 @@
                                                                     class="btn btn-success waves-effect">
                                                                     <i class="material-icons">visibility</i>
                                                                 </a>
-                                                                <button class="btn btn-danger waves-effect" type="button"
+                                                                <button class="btn btn-danger waves-effect" id="selcat" type="button"
                                                                     onclick="deleteCatowner({{ $cat->id }})">
                                                                     <i class="material-icons">delete</i>
                                                                 </button>
