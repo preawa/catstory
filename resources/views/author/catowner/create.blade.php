@@ -42,7 +42,7 @@
                             </div> --}}
 
                             <div class="form-group">
-                                <label for="location"> Location/City/Address </label>
+                                <label for="location"> ระบุตำแหน่ง/ที่อยู่ </label>
                                 <button type="button" class="btn btn-success waves-effect" onclick="getLocation()">
                                     ใช้ตำแหน่งปัจจุบัน
                                 </button>
@@ -59,7 +59,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="image">Featured Image</label>
+                                <label for="image">เลือกรูปภาพ</label>
                                 <input type="file" name="image">
                             </div>
 
