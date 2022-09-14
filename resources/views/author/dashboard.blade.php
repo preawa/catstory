@@ -1127,7 +1127,7 @@
                                                                     class="btn btn-success waves-effect">
                                                                     <i class="material-icons">visibility</i>
                                                                 </a>
-                                                                <button class="btn btn-danger waves-effect" type="button"
+                                                                {{-- <button class="btn btn-danger waves-effect" type="button"
                                                                     onclick="deleteCatowner({{ $cat->id }})">
                                                                     <i class="material-icons">delete</i>
                                                                 </button>
@@ -1136,7 +1136,7 @@
                                                                     method="POST" style="display: none;">
                                                                     @csrf
                                                                     @method('DELETE')
-                                                                </form>
+                                                                </form> --}}
                                                             </td>
                                                         </tr>
                                                     @endforeach
