@@ -1131,16 +1131,15 @@
                                                                     onclick="deleteCatowner({{ $cat->id }})">
                                                                     <i class="material-icons">delete</i>
                                                                 </button>
-                                                                
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                    <form id="delete-form-{{ $cat->id }}"
+                                                                <form id="delete-form-{{ $cat->id }}"
                                                                     action="{{ route('author.catowner.delcat', $cat->id) }}"
                                                                     method="POST" style="display: none;">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                 </form>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                             {{ $catss->links() }}

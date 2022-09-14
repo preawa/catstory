@@ -117,7 +117,7 @@ Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 
     Route::delete('dashboard/{id}', 'DashboardController@destroy')->name('dashboard.destroy');
     Route::post('/catowner/{cat}', 'CatController@delete_duplicate')->name('catowner.delcat');
 
-    Route::post('/catowner/{cat}', 'CatownerController@delete_dash')->name('catowner.delcat');
+    Route::post('/{id}/catowner', 'CatownerController@delete_dash')->name('catowner.delcat');
 
     Route::resource('adopt', 'AdoptController');
 
