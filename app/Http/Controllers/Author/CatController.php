@@ -183,19 +183,19 @@ class CatController extends Controller
      * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    // public function destroy(Cat $cat)
-    // {
+    public function destroy(Cat $cat)
+    {
 
 
-    //     if ($cat->user_id != Auth::id()) {
-    //         Toastr::error('You are not authorized to access this cat', 'Error');
-    //         return redirect()->back();
-    //     }
+        if ($cat->user_id != Auth::id()) {
+            Toastr::error('You are not authorized to access this cat', 'Error');
+            return redirect()->back();
+        }
 
-    //     $cat->delete();
-    //     Toastr::success('Cat Successfully Deleted :)', 'Success');
-    //     return redirect()->back();
-    // }
+        $cat->delete();
+        Toastr::success('Cat Successfully Deleted :)', 'Success');
+        return redirect()->back();
+    }
 
     public function delete_duplicate(Request $request)
     {
