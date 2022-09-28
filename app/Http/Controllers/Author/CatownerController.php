@@ -155,16 +155,16 @@ class CatownerController extends Controller
         return redirect()->back();
     }
 
-    public function delete(Catowner $cat)
-    {
+    // public function delete(Catowner $cat)
+    // {
 
-        $cat = Cat::where('id', $cat)->firstOrFail();
-        Toastr::error('You are not authorized to access this cat', 'Error');
-        return redirect()->back();
-        $cat->delete();
-        Toastr::success('Cat Successfully Deleted :)', 'Success');
-        return redirect()->back();
-    }
+    //     $cat = Cat::where('id', $cat)->firstOrFail();
+    //     Toastr::error('You are not authorized to access this cat', 'Error');
+    //     return redirect()->back();
+    //     $cat->delete();
+    //     Toastr::success('Cat Successfully Deleted :)', 'Success');
+    //     return redirect()->back();
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -185,14 +185,14 @@ class CatownerController extends Controller
         return redirect()->back();
     }
 
-    public function delete_dash(Request $request)
-    {
-        $selid = $request->selcat;
-        Toastr::success('Catowner Successfully Deleted :) ' . $selid, 'Success');
-        //print_r($selid);
-        $cat_del = Catowner::find($selid);
-        $cat_del->delete();
-        return redirect()->back();
-    }
+    // public function delete_dash(Request $request)
+    // {
+    //     $selid = $request->selcat;
+    //     Toastr::success('Catowner Successfully Deleted :) ' . $selid, 'Success');
+    //     //print_r($selid);
+    //     $cat_del = Catowner::find($selid);
+    //     $cat_del->delete();
+    //     return redirect()->back();
+    // }
     
 }
