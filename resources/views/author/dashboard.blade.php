@@ -767,12 +767,12 @@
                                                                                                         for="publish">Publish</label>
                                                                                                 </div>
 
-                                                                                                <button
+                                                                                                {{-- <button
                                                                                                     class="btn btn-danger waves-effect"
                                                                                                     type="button"
                                                                                                     onclick="deletePost({{ $post->id }})">
                                                                                                     DELETE
-                                                                                                </button>
+                                                                                                </button> --}}
                                                                                                 <form
                                                                                                     id="delete-form-{{ $post->id }}"
                                                                                                     action="{{ route('admin.post.destroy', $post->id) }}"
@@ -782,7 +782,7 @@
                                                                                                     @method('DELETE')
                                                                                                 </form>
                                                                                                 <button type="submit"
-                                                                                                    class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>
+                                                                                                class="btn btn-danger waves-effect">DELETE</button>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
