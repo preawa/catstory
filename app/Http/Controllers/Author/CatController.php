@@ -164,6 +164,7 @@ class CatController extends Controller
         $cats = Cat::find($catId);
         $cats->status = 1;
         $cats->save();
+        return redirect()->back();
     }
 
     // public function delete(Cat $cat)
