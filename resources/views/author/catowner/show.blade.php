@@ -73,7 +73,7 @@
                                     </tr>
                                     <tr>
                                         <td><strong>ลักษณะแมว :</strong></td>
-                                        <td>{{ $cats[0]['body'] }}</td>
+                                        <td><strong>{{ $cats[0]['body'] }}</strong></td>
                                     </tr>
 
                                     <tr>
