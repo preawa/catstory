@@ -66,7 +66,7 @@
 
                                         <td><strong>ชื่อแมว :</strong></td>
                                         <td>
-                                            <h6 class="h5">{{ $cats[0]['name'] }}</h6>
+                                            <strong>{{ $cats[0]['name'] }}</strong>
 
                                         </td>
 
