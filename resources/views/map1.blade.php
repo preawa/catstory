@@ -232,7 +232,7 @@
                                         <br>
                                         <div class="header">
                                             <h5 class="h5">
-                                                แมวทั้งหมด
+                                                แมวทั้งหมดในแผนที่
                                             </h5>
                                         </div>
                                         <div class="body">

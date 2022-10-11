@@ -1078,7 +1078,7 @@
                                 <div class="card">
                                     <div class="header">
                                         <h5 class="h5">
-                                            All Cat in Map
+                                            All Cats
                                         </h5>
                                     </div>
                                     <div class="body">
