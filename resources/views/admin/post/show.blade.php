@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                {{-- <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header bg-cyan">
                             <h2>
@@ -68,7 +68,7 @@
                                 <span class="label bg-green">{{ $tag->name }}</span>
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="card">
                         <div class="header bg-amber">
                             <h2>

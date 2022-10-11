@@ -49,6 +49,7 @@ class MapController extends Controller
         $map->address_address = $request->address_address;
         $map->latitude = $request->latitude;
         $map->longitude = $request->longitude;
+        $map->is_approved = true;
         $map->save();
         // Map::create($request->all());
 
@@ -76,6 +77,28 @@ class MapController extends Controller
     {
         //
     }
+
+    public function pending()
+    {
+        $maps = Map::where('is_approved', false)->get();
+        return view('admin.map.pending', compact('maps'));
+    }
+    
+    public function approval($id)
+    {
+        $map = Map::findOrFail($id);
+        if ($map->is_approved == false) {
+            $map->is_approved = true;
+            $map->save();
+            $map->user->notify(new AuthorPostApproved($map));
+
+            Toastr::success('Map Successfully Approved :)', 'Success');
+        } else {
+            Toastr::info('This Map is already approved', 'Info');
+        }
+        return redirect()->back();
+    }
+
 
     /**
      * Update the specified resource in storage.
