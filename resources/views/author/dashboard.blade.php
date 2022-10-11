@@ -578,7 +578,7 @@
 
             <li class="nav-item">
                 <a class="nav-link py-4" href="#catowner" data-toggle="tab"><i class="material-icons">person_pin</i>Cats
-                    Owner</a>
+                </a>
             </li>
 
             <li class="nav-item">
