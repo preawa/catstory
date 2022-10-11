@@ -52,7 +52,7 @@
                             id="form">BACK</a>
 
                         <form action="{{ route('author.catowner.booking', $cats[0]) }}">
-                            <button type="submit" class="btn btn-first">booking</button>
+                            <button type="submit" class="btn btn-first">Adopt</button>
                             {{-- <input type="button" class="btn btn-first active float-right" value="booking"/> --}}
                         </form>
                     </div>
@@ -77,7 +77,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td><strong>Status:</strong></td>
+                                        <td><strong>สถานะแมว :</strong></td>
                                         <td>
                                             @if ($cats[0]['status'])
                                                 <strong>มีเจ้าของ</strong>
@@ -108,7 +108,7 @@
                                             <div>
                                                 <button type="submit" class="btn btn-first"
                                                     onclick="deleteCatowner({{ $allcat->id }})">
-                                                    <i class="material-icons">delete</i>
+                                                    <i class="material-icons">Same Cat</i>
                                                 </button>
                                                 {{-- <form id="delete-form-{{ $allcat->id }}"
                                                     action="{{ route('author.catowner.destroy', $allcat->id) }}"

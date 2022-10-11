@@ -1070,7 +1070,7 @@
                         <div class="block-header">
                             <a class="btn btn-first waves-effect d-flex w-120  mb-3"
                                 href="{{ route('author.catowner.create') }}">
-                                <i class="material-icons">person_pin</i>Add Cats</a>
+                                <i class="material-icons">person_pin</i>Add Cat</a>
                         </div>
                         <!-- Exportable Table -->
                          <div class="row clearfix">
@@ -1078,7 +1078,7 @@
                                 <div class="card">
                                     <div class="header">
                                         <h5 class="h5">
-                                            ALL Form Cats
+                                            All Cat in Map
                                         </h5>
                                     </div>
                                     <div class="body">
