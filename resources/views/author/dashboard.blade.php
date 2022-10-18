@@ -548,19 +548,19 @@
                     <h4 class="text-center h6 mt-2">{{ Auth::user()->email }}</h4>
                     <a class="d-inline-block text-dark ml-3">
                         <strong>{{ $posts->count() }}</strong>
-                        <h6> posts</h6>
+                        <h6> โพสต์</h6>
                     </a>
                     <a class="d-inline-block text-dark ml-3">
                         <strong>{{ Auth::user()->favorite_posts()->count() }}</strong>
-                        <h6>favorite</h6>
+                        <h6>รายการโปรด</h6>
                     </a>
                     <a class="d-inline-block text-dark ml-3">
                         <strong>{{ $total_pending_posts }}</strong>
-                        <h6>pending</h6>
+                        <h6>รออนุมัติ</h6>
                     </a>
                     <a class="d-inline-block text-dark ml-3">
                         <strong>{{ $all_views }}</strong>
-                        <h6>views</h6>
+                        <h6>ยอดคนดู</h6>
                     </a>
                 </div>
             </div>
@@ -573,22 +573,22 @@
             class="nav nav-tabs tabs-alt justify-content-center text-white tab-profile bg-color2 text-center d-block d-sm-flex">
             <li class="nav-item">
                 <a class="nav-link py-4 active" href="#my-post" data-toggle="tab"><i class="material-icons">article</i>
-                    Posts</a>
+                    โพสต์</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link py-4" href="#catowner" data-toggle="tab"><i class="material-icons">person_pin</i>Cats
+                <a class="nav-link py-4" href="#catowner" data-toggle="tab"><i class="material-icons">person_pin</i>ลงทะเบียนแมว
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link py-4" href="#gallary" data-toggle="tab"><i class="material-icons">collections</i>
-                    Gallarys</a>
+                    รูปภาพทั้งหมด</a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link py-4" href="#setting" data-toggle="tab"><i class="material-icons">settings</i>
-                    Settings</a>
+                    ตั้งต่า</a>
             </li>
 
             <li class="nav-item">
@@ -596,7 +596,7 @@
                     onclick="event.preventDefault();
                                                                                                                                                                                                                                                                                                 document.getElementById('logout-form').submit();"
                     data-toggle="tab">
-                    <i class="material-icons">input</i> LogOut
+                    <i class="material-icons">input</i> ออกจากระบบ
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -625,7 +625,7 @@
                                         <br>
                                         <!-- Button trigger modal -->
                                         <button class="btn btn-first active float-right" data-toggle="modal"
-                                            data-target="#exampleModalCenter">Post</button>
+                                            data-target="#exampleModalCenter">โพสต์</button>
                                     </div>
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -633,7 +633,7 @@
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <div class="h5">ADD NEW POST</div>
+                                                    <div class="h5">สร้างโพสต์</div>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <i class="material-icons">close</i>
@@ -656,7 +656,7 @@
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="image">Featured Image</label>
+                                                                <label for="image">รูปภาพ</label>
                                                                 <br>
                                                                 <input type="file" name="image" multiple>
                                                             </div>
@@ -664,13 +664,13 @@
                                                             <div class="form-group">
                                                                 <input type="checkbox" id="publish" class="filled-in"
                                                                     name="status" value="1">
-                                                                <label for="publish">Publish</label>
+                                                                <label for="publish">สาธารณะ</label>
                                                             </div>
 
                                                             <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
+                                                                data-dismiss="modal">ปิด</button>
                                                             <button type="submit"
-                                                                class="btn btn-first m-t-15 waves-effect">Submit</button>
+                                                                class="btn btn-first m-t-15 waves-effect">ยืนยัน</button>
 
                                                         </div>
                                                     </form>
@@ -713,11 +713,11 @@
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
                                                                             <h5 class="h5">
-                                                                                EDIT POST
+                                                                                ลบโพสต์
                                                                             </h5>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal" aria-label="Close">
-                                                                                <i class="material-icons">close</i>
+                                                                                <i class="material-icons">ปิด</i>
                                                                             </button>
                                                                         </div>
                                                                         <div class="modal-body">
@@ -731,7 +731,7 @@
                                                                                         <div class="card">
 
                                                                                             <div class="body">
-                                                                                                <div
+                                                                                                {{-- <div
                                                                                                     class="form-group form-float">
                                                                                                     <label
                                                                                                         for="">Topic</label>
@@ -748,8 +748,7 @@
 
                                                                                                 <div class="form-group">
                                                                                                     <label
-                                                                                                        for="image">Featured
-                                                                                                        Image</label>
+                                                                                                        for="image">รูปภาพ</label>
                                                                                                     <br>
                                                                                                     <input type="file"
                                                                                                         name="image"
@@ -764,8 +763,8 @@
                                                                                                         value="1"
                                                                                                         {{ $post->status == true ? 'checked' : '' }}>
                                                                                                     <label
-                                                                                                        for="publish">Publish</label>
-                                                                                                </div>
+                                                                                                        for="publish">สาธารณะ</label>
+                                                                                                </div> --}}
 
                                                                                                 {{-- <button
                                                                                                     class="btn btn-danger waves-effect"
@@ -782,7 +781,7 @@
                                                                                                     @method('DELETE')
                                                                                                 </form>
                                                                                                 <button type="submit"
-                                                                                                class="btn btn-danger waves-effect">DELETE</button>
+                                                                                                class="btn btn-danger waves-effect">ลบ</button>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -818,7 +817,7 @@
                                                                     class="{{ !Auth::user()->favorite_posts->where('pivot.post_id', $post->id)->count() == 0
                                                                         ? 'favorite_posts'
                                                                         : '' }}"><i
-                                                                        class="ion-heart"></i> Like
+                                                                        class="ion-heart"></i> ถูกใจ
                                                                     {{ $post->favorite_to_users->count() }}</a>
                                                                 <form id="favorite-form-{{ $post->id }}" method="POST"
                                                                     action="{{ route('post.favorite', $post->id) }}"
@@ -826,7 +825,7 @@
                                                                     @csrf
                                                                 </form>
                                                             @endguest
-                                                            <a href="#"><i class="ion-chatbubble"></i> Comment
+                                                            <a href="#"><i class="ion-chatbubble"></i> แสดงความคิดเห็น
                                                                 {{ $post->comments->count() }}</a>
                                                             {{-- <a href="#"><i class="ion-eye"></i>View
                                             {{ $post->view_count }}</a> --}}
@@ -854,8 +853,8 @@
                                                         @endif
                                                         <div class="comment-form">
                                                             @guest
-                                                                <p>For post a new comment. You need to login first. <a
-                                                                        href="{{ route('login') }}">Login</a></p>
+                                                                <p>กรุณาเข้าสู่ระบบเพื่อแสดงความคิดเห็น <a
+                                                                        href="{{ route('login') }}">เข้าสู่ระบบ</a></p>
                                                             @else
                                                                 <form method="post"
                                                                     action="{{ route('comment.store', $post->id) }}">
@@ -897,12 +896,12 @@
                             <ul class="nav nav-tabs nab-settingprofile">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#profile" data-toggle="tab"><i
-                                            class="material-icons">face</i> UPDATE PROFILE</a>
+                                            class="material-icons">face</i> อัปเดตโปรไฟล์</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="#change_password" data-toggle="tab">
-                                        <i class="material-icons">change_history</i> CHANGE PASSWORD
+                                        <i class="material-icons">change_history</i> เปลี่ยนรหัสผ่าน
                                     </a>
                                 </li>
 
@@ -917,7 +916,7 @@
                                         @method('PUT')
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="name">Name : </label>
+                                                <label for="name">ชื่อ : </label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -931,7 +930,7 @@
                                         </div>
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="email_address_2">Email Address :</label>
+                                                <label for="email_address_2">อีเมล :</label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -945,7 +944,7 @@
                                         </div>
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="email_address_2">Profile Image : </label>
+                                                <label for="email_address_2">รูปโปรไฟล์ : </label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -957,7 +956,7 @@
                                         </div>
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="email_address_2">About : </label>
+                                                <label for="email_address_2">คำอธิบาย : </label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -972,7 +971,7 @@
                                             <div
                                                 class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5 center-block">
                                                 <button type="submit"
-                                                    class="btn btn-first m-t-15 waves-effect">UPDATE</button>
+                                                    class="btn btn-first m-t-15 waves-effect">อัปเดต</button>
                                             </div>
                                         </div>
                                     </form>
@@ -984,7 +983,7 @@
                                         @method('PUT')
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="old_password">Old Password : </label>
+                                                <label for="old_password">รหัสผ่านเดิม : </label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -998,7 +997,7 @@
 
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="password">New Password :</label>
+                                                <label for="password">รหัสผ่านใหม่ :</label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -1012,7 +1011,7 @@
 
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                                <label for="confirm_password">Confirm Password : </label>
+                                                <label for="confirm_password">ยืนยันรหัสผ่าน : </label>
                                             </div>
                                             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                                 <div class="form-group">
@@ -1070,7 +1069,7 @@
                         <div class="block-header">
                             <a class="btn btn-first waves-effect d-flex w-120  mb-3"
                                 href="{{ route('author.catowner.create') }}">
-                                <i class="material-icons">person_pin</i>Add Cat</a>
+                                <i class="material-icons">person_pin</i>ลงทะเบียนแมว</a>
                         </div>
                         <!-- Exportable Table -->
                          <div class="row clearfix">
@@ -1078,7 +1077,7 @@
                                 <div class="card">
                                     <div class="header">
                                         <h5 class="h5">
-                                            All Cats
+                                            แมวที่ลงทะเบียน
                                         </h5>
                                     </div>
                                     <div class="body">
@@ -1087,14 +1086,14 @@
                                                 class="table table-bordered table-striped table-hover dataTable js-exportable">
                                                 <thead>
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Name</th>
-                                                        <th>Author</th>
-                                                        <th>Description</th>
-                                                        <th>Status</th>
-                                                        <th>Is Approved</th>
-                                                        <th>Created At</th>
-                                                        <th>Action</th>
+                                                        <th>ลำดับแมว</th>
+                                                        <th>ชื่อแมว</th>
+                                                        <th>ผู้ลงทะเบียน</th>
+                                                        <th>ลักษณะแมว</th>
+                                                        <th>สถานะ</th>
+                                                        <th>อนุมัติ</th>
+                                                        <th>วัน-เวลา</th>
+                                                        <th>รายละเอียด</th>
                                                     </tr>
                                                 </thead>
 
