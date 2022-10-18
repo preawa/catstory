@@ -11,14 +11,14 @@
     <div class="container-fluid">
         <!-- Vertical Layout | With Floating Label -->
         <a href="{{ route('admin.map.index') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
-        @if ($cat->is_approved == false)
+        @if ($map->is_approved == false)
                                                 <button type="button" class="btn btn-success waves-effect"
-                                                    onclick="approveMap({{ $cat->id }})">
+                                                    onclick="approveMap({{ $map->id }})">
                                                     <i class="material-icons">done</i>
                                                 </button>
                                                 <form method="post"
-                                                    action="{{ route('admin.map.approve', $cat->id) }}"
-                                                    id="approval-form-{{ $cat->id }}" style="display: none">
+                                                    action="{{ route('admin.map.approve', $map->id) }}"
+                                                    id="approval-form-{{ $map->id }}" style="display: none">
                                                     @csrf
                                                     @method('PUT')
                                                 </form>
