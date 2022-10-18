@@ -28,7 +28,7 @@ class MapController extends Controller
     public function index2()
     {
         $cats = Cat::latest()->orderBy('id', 'DESC')->paginate(10);
-        return view('map2', compact('cats'));
+        return view('map2', compact('cats'))->with('no', 1);
     }
 
 }
