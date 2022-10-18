@@ -135,7 +135,7 @@ class CatController extends Controller
         if ($cat->is_approved == false) {
             $cat->is_approved = true;
             $cat->save();
-            $cat->user->notify(new AuthorPostApproved($cat));
+            $cat->user->notify(new AuthorPostApproved($cat))->withCat($cat);
 
             Toastr::success('Cat Successfully Approved :)', 'Success');
         } else {
