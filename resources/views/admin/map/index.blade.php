@@ -35,7 +35,7 @@
                                 class="table table-bordered table-striped table-hover dataTable js-exportable">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>ลำดับที่</th>
                                         <th>ชื่อแมว</th>
                                         <th>ผู้ลงทะเบียน</th>
                                         <th>ลักษณะแมว</th>
