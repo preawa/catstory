@@ -16,12 +16,7 @@
             onclick="approveMap({{ $cat->id }})">
             <i class="material-icons">done</i>
         </button>
-        <form method="post"
-            action="{{ route('admin.map.approve', $cat->id) }}"
-            id="approval-form-{{ $cat->id }}" style="display: none">
-            @csrf
-            @method('PUT')
-            
+        
         </form>
         <br /><br />
         <div class="row center-block">
