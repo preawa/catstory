@@ -241,6 +241,7 @@
                                                     class="table table-bordered table-striped table-hover dataTable js-exportable">
                                                     <thead>
                                                         <tr>
+                                                            <th>ลำดับที่</th>
                                                             <th>ลำดับแมว</th>
                                                             <th>ชื่อแมว</th>
                                                             <th>ผู้ลงทะเบียน</th>
@@ -253,8 +254,8 @@
                                                         @foreach ($cats as $key => $cat)
                                                             @if ($cat->status != 0)
                                                                 <tr>
-                                                                    <td>{{  $i=1 , $i + 1}}</td>
-                                                                    {{-- <td>{{ $key + 1 }}</td> --}}
+                                                                    <td>{{  $i=1 }},{{$i++}}</td>                                                          
+                                                                    <td>{{ $key + 1 }}</td>
                                                                     <td>{{ str_limit($cat->name, '10') }}</td>
                                                                     <td>{{ $cat->user->name }}</td>
                                                                     <td>{{ $cat->body }}</td>
