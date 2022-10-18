@@ -49,10 +49,10 @@
                     </div>
                     <div class="d-flex mb-3">
                         <a href="{{ route('author.dashboard') }}" class="btn btn-danger waves-effect mr-1"
-                            id="form">BACK</a>
+                            id="form">กลับ</a>
 
                         <form action="{{ route('author.catowner.booking', $cats[0]) }}">
-                            <button type="submit" class="btn btn-first">Adopt</button>
+                            <button type="submit" class="btn btn-first">รับเลี้ยง</button>
                             {{-- <input type="button" class="btn btn-first active float-right" value="booking"/> --}}
                         </form>
                     </div>
@@ -108,7 +108,7 @@
                                             <div>
                                                 <button type="submit" class="btn btn-first"
                                                     onclick="deleteCatowner({{ $allcat->id }})">
-                                                    <i class="material-icons">Same Cat</i>
+                                                    <i class="material-icons">แมวซ้ำ</i>
                                                 </button>
                                                 {{-- <form id="delete-form-{{ $allcat->id }}"
                                                     action="{{ route('author.catowner.destroy', $allcat->id) }}"
