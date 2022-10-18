@@ -275,7 +275,7 @@
                                                                     </td>
 
                                                                 </tr>
-                                                                 $i++ ?>
+                                                                <?php $i++ ?>
                                                             @endif
                                                         @endforeach
                                                     </tbody>
