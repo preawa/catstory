@@ -11,18 +11,25 @@
     <div class="container-fluid">
         <!-- Vertical Layout | With Floating Label -->
         <a href="{{ route('admin.map.index') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
-        @if ($cat->is_approved == false)
-        <button type="button" class="btn btn-success waves-effect"
-            onclick="approveMap({{ $cat->id }})">
-            <i class="material-icons">done</i>
-        </button>
-        {{-- <form method="post"
-            action="{{ route('admin.map.approve', $cat->id) }}"
-            id="approval-form-{{ $cat->id }}" style="display: none">
-            @csrf
-            @method('PUT')
-        </form> --}}
+        @if($cat->is_approved == true)
+        <span class="badge bg-blue">Approved</span>
+    @else
+        <span class="badge bg-pink">Pending</span>
     @endif
+</td>
+<td>
+    @if ($cat->is_approved == false)
+    <button type="button" class="btn btn-success waves-effect"
+        onclick="approveMap({{ $cat->id }})">
+        <i class="material-icons">done</i>
+    </button>
+    <form method="post"
+        action="{{ route('admin.map.approve', $cat->id) }}"
+        id="approval-form-{{ $cat->id }}" style="display: none">
+        @csrf
+        @method('PUT')
+    </form>
+@endif
         </form>
         <br /><br />
         <div class="row center-block">
@@ -99,6 +106,37 @@
             });
             // });
 
+        }
+        function approveMap(id) {
+            debugger;
+            swal({
+                title: 'Are you sure?',
+                text: "You went to approve this post ",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, approve it!',
+                cancelButtonText: 'No, cancel!',
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                buttonsStyling: false,
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    event.preventDefault();
+                    document.getElementById('approval-form-'+ id).submit();
+                } else if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.cancel
+                ) {
+                    swal(
+                        'Cancelled',
+                        'The post remain pending :)',
+                        'info'
+                    )
+                }
+            })
         }
 
         // Adds a marker to the map.
