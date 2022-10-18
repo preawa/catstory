@@ -648,7 +648,7 @@
                                                             <div class="form-group form-float">
                                                                 <div class="form-line">
                                                                     <textarea type="text" id="title" class="form-control"
-                                                                        name="title" placeholder="คุณคิดอะไรอยู่"
+                                                                        name="title" placeholder="คุณกำลังคิดอะไรอยู่"
                                                                         aria-required="true"
                                                                         aria-invalid="false"></textarea>
 
