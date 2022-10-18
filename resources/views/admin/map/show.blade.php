@@ -11,7 +11,10 @@
     <div class="container-fluid">
         <!-- Vertical Layout | With Floating Label -->
         <a href="{{ route('admin.map.index') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
-        
+        <button type="button" class="btn btn-success waves-effect pull-right">
+            <i class="material-icons">done</i>
+            <span>Approve</span>
+        </button>
         <br /><br />
         <div class="row center-block">
             <div class="col-xs-10 col-sm-10 col-md-10 ">
