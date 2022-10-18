@@ -11,6 +11,7 @@
     <div class="container-fluid">
         <!-- Vertical Layout | With Floating Label -->
         <a href="{{ route('admin.map.index') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
+        <td>
         @if ($cat->is_approved == false)
         <button type="button" class="btn btn-success waves-effect"
             onclick="approveMap({{ $cat->id }})">
@@ -23,6 +24,7 @@
             @method('PUT')
         </form>
     @endif
+        </td>
         <br /><br />
         <div class="row center-block">
             <div class="col-xs-10 col-sm-10 col-md-10 ">
