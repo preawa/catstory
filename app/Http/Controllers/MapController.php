@@ -22,7 +22,7 @@ class MapController extends Controller
     public function index1()
     {
         $cats = Cat::latest()->orderBy('id', 'DESC')->paginate(10);
-        return view('map1', compact('cats'));
+        return view('map1', compact('cats'))->with('no', 1);
     }
 
     public function index2()
@@ -30,4 +30,5 @@ class MapController extends Controller
         $cats = Cat::latest()->orderBy('id', 'DESC')->paginate(10);
         return view('map2', compact('cats'));
     }
+
 }
