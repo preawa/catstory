@@ -11,10 +11,22 @@
     <div class="container-fluid">
         <!-- Vertical Layout | With Floating Label -->
         <a href="{{ route('admin.map.index') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
+        {{-- @if($post->is_approved == false) --}}
         <button type="button" class="btn btn-success waves-effect pull-right">
             <i class="material-icons">done</i>
             <span>Approve</span>
         </button>
+        {{-- <br>
+            <form method="post" action="{{ route('admin.post.approve',$post->id) }}" id="approval-form" style="display: none">
+                @csrf
+                @method('PUT')
+            </form>
+        @else
+            <button type="button" class="btn btn-success pull-right" disabled>
+                <i class="material-icons">done</i>
+                <span>Approved</span>
+            </button>
+        @endif --}}
         <br /><br />
         <div class="row center-block">
             <div class="col-xs-10 col-sm-10 col-md-10 ">

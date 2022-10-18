@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <a href="{{ route('author.dashboard') }}" class="btn btn-danger waves-effect" id="form">BACK</a>
+                            <a href="{{ route('author.dashboard') }}" class="btn btn-danger waves-effect" id="form">กลับ</a>
                             <button type="submit" class="btn btn-success"> บันทึก</button>
                         </div>
                     </div>
