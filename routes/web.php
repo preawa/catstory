@@ -62,10 +62,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-    Route::resource('map', 'CatController');
+    Route::resource('map', 'MapController');
     Route::get('/location/map', 'CatController@location')->name('map.location');
     Route::get('/pending/map', 'CatController@pending')->name('map.pending');
-    Route::put('/map/{id}/approve', 'CatController@approval')->name('map.approve');
+    Route::put('/map/{id}/approve', 'MapController@approval')->name('map.approve');
 
     Route::resource('totelmap', 'CatownerController');
     Route::resource('catowner', 'CatownerController');
