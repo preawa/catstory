@@ -1069,7 +1069,7 @@
                         <div class="block-header">
                             <a class="btn btn-first waves-effect d-flex w-120  mb-3"
                                 href="{{ route('author.catowner.create') }}">
-                                <i class="material-icons">person_pin</i>ลงทะเบียนแมว</a>
+                                <i class="material-icons">person_pin</i>เพิ่มแมว</a>
                         </div>
                         <!-- Exportable Table -->
                          <div class="row clearfix">
