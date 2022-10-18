@@ -253,7 +253,7 @@
                                                         @foreach ($cats as $key => $cat)
                                                             @if ($cat->status != 0)
                                                                 <tr>
-                                                                    {{-- <td>{{ $key + 1 }}</td> --}}
+                                                                    <td>{{ $key}}</td>
                                                                     <td>{{ str_limit($cat->name, '10') }}</td>
                                                                     <td>{{ $cat->user->name }}</td>
                                                                     <td>{{ $cat->body }}</td>
