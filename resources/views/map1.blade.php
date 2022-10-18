@@ -253,7 +253,7 @@
                                                     <tbody>
                                                         @foreach ($cats as $key => $cat)
                                                             @if ($cat->status != 0)
-                                                            <?php $i=1 ?>
+                                                            <?php $i=1 
                                                                 <tr>
                                                                     <td>{{  $i=1 }}</td>                                                          
                                                                     <td>{{ $key + 1 }}</td>
@@ -275,7 +275,7 @@
                                                                     </td>
 
                                                                 </tr>
-                                                                <?php $i++ ?>
+                                                                 $i++ ?>
                                                             @endif
                                                         @endforeach
                                                     </tbody>
