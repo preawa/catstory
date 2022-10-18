@@ -162,13 +162,13 @@
                         <div class="card mb-5 mx-auto">
 
                             <div class="card-body">
-                                <h3 class="h3 text-center">Sign In</h3>
+                                <h3 class="h3 text-center">เข้าสู่ระบบ</h3>
                                 <form method="POST" class="my-3 login-form" action="{{ route('login') }}"
                                     aria-label="{{ __('Login') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="Email">Email address</label>
-                                        <input id="email" type="email" placeholder="E-mail Address"
+                                        <label for="Email">อีเมล</label>
+                                        <input id="email" type="email" placeholder="อีเมล"
                                             class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                             name="email" value="{{ old('email') }}" required autofocus>
 
@@ -180,10 +180,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="Password">Password</label>
+                                        <label for="Password">รหัสผ่าน</label>
                                         <span toggle="#password"
                                             class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                                        <input id="password" type="password" placeholder="password"
+                                        <input id="password" type="password" placeholder="รหัสผ่าน"
                                             class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                             name="password" required>
                                         
@@ -204,13 +204,12 @@
                                                     id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                                 <label class="form-check-label" for="remember">
-                                                    {{ __('Remember Me') }}
+                                                    {{ __('จดจำ') }}
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 text-right">
-                                            <a class="color2 a-signin" href="{{ route('password.request') }}">Forgot your
-                                                password?</a>
+                                            <a class="color2 a-signin" href="{{ route('password.request') }}">ลืมรหัสผ่าน?</a>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-0">
@@ -222,8 +221,8 @@
 
                                 <div class="col-md-12 ">
                                     <div class="d-flex justify-content-center links">
-                                        Don't have an account? <a class="color2 a-signin"
-                                            href="{{ route('register') }}">Sign Up</a>
+                                       ไม่มีบัญชี <a class="color2 a-signin"
+                                            href="{{ route('register') }}">ลงทะเบียน</a>
                                     </div>
 
                                 </div>
