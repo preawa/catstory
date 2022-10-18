@@ -244,14 +244,14 @@
                                                 class="{{ !Auth::user()->favorite_posts->where('pivot.post_id', $post->id)->count() == 0
                                                     ? 'favorite_posts'
                                                     : '' }}"><i
-                                                    class="ion-heart"></i> Like
+                                                    class="ion-heart"></i> ถูกใจ
                                                 {{ $post->favorite_to_users->count() }}</a>
                                             <form id="favorite-form-{{ $post->id }}" method="POST"
                                                 action="{{ route('post.favorite', $post->id) }}" style="display: none;">
                                                 @csrf
                                             </form>
                                         @endguest
-                                        <a href="#"><i class="ion-chatbubble"></i> Comment
+                                        <a href="#"><i class="ion-chatbubble"></i> แสดงความคิดเห็น
                                             {{ $post->comments->count() }}</a>
                                         {{-- <a href="#"><i class="ion-eye"></i>View
                                             {{ $post->view_count }}</a> --}}
@@ -279,18 +279,18 @@
                                 @endif
                                 <div class="comment-form">
                                     @guest
-                                        <p>For post a new comment. You need to login first. <a
-                                                href="{{ route('login') }}">Login</a></p>
+                                        <p>กรุณาเข้าสู่ระบบเพื่อแสดงความคิดเห็น <a
+                                                href="{{ route('login') }}">เข้าสู่ระบบ</a></p>
                                     @else
                                         <form method="post" action="{{ route('comment.store', $post->id) }}">
                                             @csrf
                                             <div class="post-options">
                                                 <div class="col-sm-12">
                                                     <input name="comment" class="text-area-messge form-control"
-                                                        placeholder="Enter your comment" aria-required="true"
+                                                        placeholder="แสดงความคิดเห็น" aria-required="true"
                                                         aria-invalid="false">
                                                     <br>
-                                                    <button class="btn btn-first active float-right">Comment</button>
+                                                    <button class="btn btn-first active float-right">แสดงความคิดเห็น</button>
                                                 </div><!-- col-sm-12 -->
                                             </div>
                                         </form>
