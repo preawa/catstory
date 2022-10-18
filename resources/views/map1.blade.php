@@ -253,8 +253,9 @@
                                                     <tbody>
                                                         @foreach ($cats as $key => $cat)
                                                             @if ($cat->status != 0)
+                                                            <?php $i=1 ?>
                                                                 <tr>
-                                                                    <td>{{  $i=1, ++$i }}</td>                                                          
+                                                                    <td>{{  $i=1 }}</td>                                                          
                                                                     <td>{{ $key + 1 }}</td>
                                                                     <td>{{ str_limit($cat->name, '10') }}</td>
                                                                     <td>{{ $cat->user->name }}</td>
@@ -274,6 +275,7 @@
                                                                     </td>
 
                                                                 </tr>
+                                                                <?php $i++ ?>
                                                             @endif
                                                         @endforeach
                                                     </tbody>
