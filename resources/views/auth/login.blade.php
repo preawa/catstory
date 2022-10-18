@@ -214,7 +214,7 @@
                                     </div>
                                     <div class="form-group row mb-0">
                                         <button type="submit" class="btn btn-first w-100">
-                                            {{ __('Login') }}
+                                            {{ __('เข้าสู่ระบบ') }}
                                         </button>
                                     </div>
                                 </form>
