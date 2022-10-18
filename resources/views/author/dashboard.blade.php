@@ -648,7 +648,7 @@
                                                             <div class="form-group form-float">
                                                                 <div class="form-line">
                                                                     <textarea type="text" id="title" class="form-control"
-                                                                        name="title" placeholder="Post Title"
+                                                                        name="title" placeholder="คุณคิดอะไรอยู่"
                                                                         aria-required="true"
                                                                         aria-invalid="false"></textarea>
 
@@ -863,11 +863,11 @@
                                                                         <div class="col-sm-12">
                                                                             <input name="comment"
                                                                                 class="text-area-messge form-control"
-                                                                                placeholder="Enter your comment"
+                                                                                placeholder="แสดงความคิดเห็น"
                                                                                 aria-required="true" aria-invalid="false">
                                                                             <br>
                                                                             <button
-                                                                                class="btn btn-first active float-right">Comment</button>
+                                                                                class="btn btn-first active float-right">แสดงความคิดเห็น</button>
                                                                         </div><!-- col-sm-12 -->
                                                                     </div>
                                                                 </form>

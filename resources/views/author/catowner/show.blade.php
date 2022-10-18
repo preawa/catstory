@@ -108,7 +108,7 @@
                                             <div>
                                                 <button type="submit" class="btn btn-first"
                                                     onclick="deleteCatowner({{ $allcat->id }})">
-                                                    <i class="material-icons">แมวซ้ำ</i>
+                                                   แมวซ้ำ
                                                 </button>
                                                 {{-- <form id="delete-form-{{ $allcat->id }}"
                                                     action="{{ route('author.catowner.destroy', $allcat->id) }}"
