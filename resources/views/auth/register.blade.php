@@ -163,13 +163,13 @@
                     <div class="card mb-5 mx-auto">
 
                         <div class="card-body">
-                            <h3 class="h3 text-center">Register</h3>
+                            <h3 class="h3 text-center">ลงทะเบียน</h3>
                             <form method="POST" class="regis-form" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                             @csrf
                             <div class="form-group">
-                                    <label for="Email">Name</label>
+                                    <label for="Email">ชื่อ</label>
                                     <input id="name" type="text"
-                                        class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" placeholder="Name"
+                                        class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" placeholder="ชื่อ"
                                         value="{{ old('name') }}" required autofocus>
 
                                     @if ($errors->has('name'))
@@ -179,9 +179,9 @@
                                     @endif
                             </div>
                             <div class="form-group">
-                                    <label for="Email">UserName</label>
+                                    <label for="Email">ชื่อผู้ใช้งาน</label>
                                     <input id="username" type="text"
-                                        class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username"placeholder="UserName"
+                                        class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username"placeholder="ชื่อผู้ใช้งาน"
                                         value="{{ old('username') }}" required autofocus>
 
                                     @if ($errors->has('username'))
@@ -191,9 +191,9 @@
                                     @endif
                             </div>
                             <div class="form-group">
-                                    <label for="Email">E-mail</label>
+                                    <label for="Email">อีเมล</label>
                                     <input id="email" type="email"
-                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="E-mail"
+                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="อีเมล"
                                         value="{{ old('email') }}" required>
 
                                     @if ($errors->has('email'))
@@ -203,8 +203,8 @@
                                     @endif
                             </div>
                             <div class="form-group">
-                                    <label for="Email">Password</label>
-                                    <input id="password" type="password" placeholder="Password"
+                                    <label for="Email">รหัสผ่าน</label>
+                                    <input id="password" type="password" placeholder="รหัสผ่าน"
                                         class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                         name="password" required>
 
@@ -215,14 +215,14 @@
                                     @endif
                             </div>
                             <div class="form-group">
-                                    <label for="Email">Confirm Password</label>
-                                    <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password"
+                                    <label for="Email">ยืนยันรหัสผ่าน</label>
+                                    <input id="password-confirm" type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน"
                                         name="password_confirmation" required>
                             </div>
 
                             <div class="form-group">
                             <button type="submit" class="btn btn-first w-100 mt-2">
-                                        {{ __('Register') }}
+                                        {{ __('ลงทะเบียน') }}
                                     </button>
                             </div>
                             
