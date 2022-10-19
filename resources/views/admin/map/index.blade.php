@@ -35,13 +35,14 @@
                                 class="table table-bordered table-striped table-hover dataTable js-exportable">
                                 <thead>
                                     <tr>
-                                        <th>ลำดับที่</th>
-                                        <th>ชื่อแมว</th>
-                                        <th>ผู้ลงทะเบียน</th>
-                                        <th>ลักษณะแมว</th>
-                                        <th>สถานะ</th>
-                                        <th>อนุญาต</th>
-                                        <th>รายละเอียด</th>
+                                       
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Is Approved</th>
+                                    <th>Status</th>
+                                    <th>Created At</th>                          
+                                    <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
