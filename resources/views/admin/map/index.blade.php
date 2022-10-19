@@ -35,14 +35,13 @@
                                 class="table table-bordered table-striped table-hover dataTable js-exportable">
                                 <thead>
                                     <tr>
-                                       
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Is Approved</th>
-                                    <th>Status</th>
-                                    <th>Created At</th>                          
-                                    <th>Action</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Author</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Approved</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
